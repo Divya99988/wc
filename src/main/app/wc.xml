@@ -12,8 +12,8 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
         <http:listener config-ref="HTTP_Listener_Configuration" path="/wc" doc:name="HTTP"/>
         <wildcard-filter pattern="abc*" caseSensitive="true" doc:name="Wildcard"/>
         <file:outbound-endpoint path="src/main/resources/out" responseTimeout="10000" doc:name="File"/>
+        <set-payload value="#['message does not matches the string']" doc:name="Set Payload"/>
         <catch-exception-strategy doc:name="Catch Exception Strategy">
-            <set-payload value="#['message does not matches the string']" doc:name="Set Payload"/>
         </catch-exception-strategy>
     </flow>
 </mule>
